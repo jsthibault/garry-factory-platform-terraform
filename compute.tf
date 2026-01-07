@@ -7,7 +7,7 @@ resource "hcloud_server" "garry_factory_1" {
   labels = {
     project     = "garry-factory"
     environment = "prod"
-    role        = "api"
+    role        = "generic-server"
     managed_by  = "terraform"
     repo        = "garry-factory-platform-terraform"
   }
