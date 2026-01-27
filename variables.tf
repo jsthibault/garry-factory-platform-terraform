@@ -25,3 +25,8 @@ variable "server_image" {
   description = "Image of the Hetzner server (e.g. ubuntu-24.04)"
   type        = string
 }
+
+variable "ssh_public_key" {
+  description = "SSH public key for accessing the Hetzner server"
+  type        = string
+}

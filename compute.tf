@@ -1,3 +1,8 @@
+resource "hcloud_ssh_key" "jean_stephane" {
+  name       = "jean-stephane"
+  public_key = var.ssh_public_key
+}
+
 resource "hcloud_firewall" "garry_factory" {
   name = "garry-factory-firewall"
 
@@ -37,6 +42,7 @@ resource "hcloud_server" "garry_factory_1" {
   server_type = var.server_type
   location    = var.server_location
 
+  ssh_keys     = [hcloud_ssh_key.jean_stephane.id]
   firewall_ids = [hcloud_firewall.garry_factory.id]
 
   labels = {
