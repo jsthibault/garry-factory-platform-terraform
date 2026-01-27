@@ -23,3 +23,19 @@ resource "gandi_livedns_record" "garry_factory_invoicetracker_api" {
   ttl    = 10800
   values = [hcloud_server.garry_factory_1.ipv4_address]
 }
+
+resource "gandi_livedns_record" "garry_factory_home" {
+  zone   = "home.fr"
+  name   = "invoicetracker"
+  type   = "A"
+  ttl    = 10800
+  values = [hcloud_server.garry_factory_1.ipv4_address]
+}
+
+resource "gandi_livedns_record" "garry_factory_home_api" {
+  zone   = "home.api.fr"
+  name   = "invoicetracker.api"
+  type   = "A"
+  ttl    = 10800
+  values = [hcloud_server.garry_factory_1.ipv4_address]
+}

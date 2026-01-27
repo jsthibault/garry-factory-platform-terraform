@@ -20,6 +20,22 @@ resource "hcloud_firewall" "garry_factory" {
   }
 
   rule {
+    description = "App port 80"
+    direction   = "in"
+    protocol    = "tcp"
+    port        = "80"
+    source_ips  = ["0.0.0.0/0", "::/0"]
+  }
+
+  rule {
+    description = "App port 443"
+    direction   = "in"
+    protocol    = "tcp"
+    port        = "443"
+    source_ips  = ["0.0.0.0/0", "::/0"]
+  }
+
+  rule {
     description = "App port 8080"
     direction   = "in"
     protocol    = "tcp"
